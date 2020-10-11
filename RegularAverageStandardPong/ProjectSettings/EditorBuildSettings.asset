@@ -11,7 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectionScene.unity
     guid: c63e9f712c95d604986326d7a1d3e93c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainGameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Arena and Ball.unity
+    guid: 1e5bd3d2551bf464688c89a0e01be164
+  - enabled: 1
+    path: Assets/Scenes/LossScene.unity
+    guid: a54740e60c37f9543bcd2de8d5ebd539
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 9ad67d567ed8f334f9d7aa1c180233c3
   m_configObjects: {}
