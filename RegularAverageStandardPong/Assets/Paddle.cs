@@ -18,16 +18,18 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             Vector3 position = this.transform.position;
-            if (position.z > -38.5f) { 
-                position.z -= 1f;
+            
+            if (position.z > -4.8f) { 
+                position.z -= 0.07f;
                 this.transform.position = position;
             }
         }
         if (Input.GetKey(KeyCode.S))
         {
             Vector3 position = this.transform.position;
-            if (position.z < 38.5f) { 
-                position.z += 1f;
+            
+            if (position.z < 4.8f) { 
+                position.z += 0.07f;
                 this.transform.position = position;
             }
         }
