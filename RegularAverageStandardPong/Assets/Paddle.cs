@@ -12,24 +12,24 @@ public class Paddle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            Vector3 position = this.transform.position;
-            
-            if (position.z > -4.8f) { 
-                position.z -= 0.07f;
-                this.transform.position = position;
-            }
-        }
         if (Input.GetKey(KeyCode.S))
         {
             Vector3 position = this.transform.position;
             
+            if (position.z > -4.8f) { 
+                position.z -= 0.18f;
+                this.transform.position = position;
+            }
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            Vector3 position = this.transform.position;
+            
             if (position.z < 4.8f) { 
-                position.z += 0.07f;
+                position.z += 0.18f;
                 this.transform.position = position;
             }
         }
