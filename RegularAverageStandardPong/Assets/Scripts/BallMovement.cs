@@ -19,9 +19,11 @@ public class BallMovement : MonoBehaviour{
     {
         if(collision.gameObject.name == "Wall 4")
         {
+            
             p1Score++;
         }else if(collision.gameObject.name == "Wall 3")
         {
+            
             p2Score++;
         }
     }
