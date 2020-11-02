@@ -11,23 +11,25 @@ public class PaddleRight : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Vector3 position = this.transform.position;
-            if (position.z > -38.5f)
-            {
-                position.z -= 1;
-                this.transform.position = position;
-            }
-        }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             Vector3 position = this.transform.position;
-            if (position.z < 38.5f)
+
+            if (position.z > -4.8f)
             {
-                position.z += 1f;
+                position.z -= 0.18f;
+                this.transform.position = position;
+            }
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            Vector3 position = this.transform.position;
+
+            if (position.z < 4.8f)
+            {
+                position.z += 0.18f;
                 this.transform.position = position;
             }
         }
