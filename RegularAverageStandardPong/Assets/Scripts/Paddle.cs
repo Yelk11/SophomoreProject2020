@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaddleRight : MonoBehaviour
+public class Paddle : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,22 +14,21 @@ public class PaddleRight : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+
+        if (Input.GetKey(KeyCode.S))
         {
             Vector3 position = this.transform.position;
-
-            if (position.z > -4.8f)
-            {
+            
+            if (position.z > -7.5f) { 
                 position.z -= 0.18f;
                 this.transform.position = position;
             }
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             Vector3 position = this.transform.position;
-
-            if (position.z < 4.8f)
-            {
+            
+            if (position.z < 7f) { 
                 position.z += 0.18f;
                 this.transform.position = position;
             }
