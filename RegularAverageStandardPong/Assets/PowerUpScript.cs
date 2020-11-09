@@ -30,29 +30,42 @@ public class PowerUpScript : MonoBehaviour
             float x;
             float y;
             float z;
+            int choose;
             Vector3 pos;
 
             powerUp.GetComponent<Renderer>().enabled = false;
             powerUp.GetComponent<Collider>().enabled = false;
-            lastHit.transform.localScale += new Vector3(0, 0, 1);
 
-            //Waits for 20 seconds after the power up has been hit to return to original size.
-            yield return new WaitForSeconds(20f);
-            lastHit.transform.localScale += new Vector3(0, 0, -1);
+            choose = Random.Range(1, 3);
 
-            while(true)
+            //Increases last-hit paddle size.
+            if (choose == 1)
             {
-                yield return new WaitForSeconds(20f);
+                lastHit.transform.localScale += new Vector3(0, 0, 1);
 
-                x = Random.Range(-13, 13);
-                y = 0.75f;
-                z = Random.Range(-4, 4);
-                pos = new Vector3(x, y, z);
-                powerUp.transform.position = pos;
-                powerUp.GetComponent<Renderer>().enabled = true;
-                powerUp.GetComponent<Collider>().enabled = true;
+                //Waits for 30 seconds after the power up has been hit to return to original size.
+                yield return new WaitForSeconds(30f);
+                lastHit.transform.localScale += new Vector3(0, 0, -1);
+
+            //Increases ball size.
+            } else if (choose == 2)
+            {
+                ball.transform.localScale += new Vector3(1, 1, 1);
+
+                //Waits for 20 seconds after the power up has been hit to return ball to original size.
+                yield return new WaitForSeconds(20f);
+                ball.transform.localScale += new Vector3(-1, -1, -1);
             }
 
+            x = Random.Range(-13, 13);
+            y = 0.75f;
+            z = Random.Range(-4, 4);
+            pos = new Vector3(x, y, z);
+
+            //Chooses a random position for the powerup to respawn and become tangible.
+            powerUp.transform.position = pos;
+            powerUp.GetComponent<Renderer>().enabled = true;
+            powerUp.GetComponent<Collider>().enabled = true;
         }
     }
 }
