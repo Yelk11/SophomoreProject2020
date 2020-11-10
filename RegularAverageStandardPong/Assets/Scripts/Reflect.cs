@@ -24,16 +24,16 @@ public class Reflect : MonoBehaviour
 
         if (redirection.point.x > transform.position.x)
         {
-            Vector3 direction = new Vector3(0, 0, 1);
+            Vector3 direction = new Vector3(0, 0, 2);
             collision.rigidbody.AddForce(direction * force, ForceMode.Impulse);
-            collision.rigidbody.AddForce(velocity / 10, ForceMode.VelocityChange);
+            collision.rigidbody.AddForce(velocity / 50, ForceMode.VelocityChange);
 
         }
         else if (redirection.point.x < transform.position.x)
         {
-            Vector3 direction = new Vector3(0, 0, -1);
+            Vector3 direction = new Vector3(0, 0, -2);
             collision.rigidbody.AddForce(direction * force, ForceMode.Impulse);
-            collision.rigidbody.AddForce(velocity / 10, ForceMode.VelocityChange);
+            collision.rigidbody.AddForce(velocity / 50, ForceMode.VelocityChange);
         }
     }
 }
