@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BallMovement : MonoBehaviour{
     public Vector3 initialImpulse;
@@ -9,6 +12,7 @@ public class BallMovement : MonoBehaviour{
     public Text scoreBoard;
     public int p1Score = 0;
     public int p2Score = 0;
+    private static int MAX_SCORE = 10;
     public GameObject ball;
 
     // Start is called before the first frame update
@@ -40,5 +44,19 @@ public class BallMovement : MonoBehaviour{
         Vector3 v = GetComponent<Rigidbody>().velocity;
         v.y = 0;
         ball.GetComponent<Rigidbody>().velocity = v;
+
+
+
+        // check for win
+        if (p1Score >= MAX_SCORE)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+        if(p2Score >= MAX_SCORE){
+            SceneManager.LoadScene("LossScene");
+        }
     }
+
+
+
 }
