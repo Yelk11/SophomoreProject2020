@@ -19,7 +19,7 @@ public class Paddle : MonoBehaviour
         {
             Vector3 position = this.transform.position;
             
-            if (position.z > -7.5f) { 
+            if (position.z > -4.8f) { 
                 position.z -= 0.18f;
                 this.transform.position = position;
             }
@@ -28,31 +28,10 @@ public class Paddle : MonoBehaviour
         {
             Vector3 position = this.transform.position;
             
-            if (position.z < 7f) { 
+            if (position.z < 4.8f) { 
                 position.z += 0.18f;
                 this.transform.position = position;
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        float force = 0.000000000005f;
-        ContactPoint redirection = collision.GetContact(0);
-        Vector3 velocity = collision.rigidbody.velocity;
-
-        if (redirection.point.x > transform.position.x)
-        {
-            Vector3 direction = new Vector3(0, 0, 1);
-            collision.rigidbody.AddForce(direction * force, ForceMode.Impulse);
-            collision.rigidbody.AddForce(velocity / 10, ForceMode.VelocityChange);
-
-        }
-        else if (redirection.point.x < transform.position.x)
-        {
-            Vector3 direction = new Vector3(0, 0, -1);
-            collision.rigidbody.AddForce(direction * force, ForceMode.Impulse);
-            collision.rigidbody.AddForce(velocity / 10, ForceMode.VelocityChange);
         }
     }
 }
