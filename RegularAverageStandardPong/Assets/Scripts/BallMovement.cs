@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour{
     public Text scoreBoard;
     public int p1Score = 0;
     public int p2Score = 0;
+    public GameObject ball;
+
     // Start is called before the first frame update
     void Start(){
         GetComponent<Rigidbody>().AddForce(initialImpulse, ForceMode.Impulse);
@@ -34,5 +36,9 @@ public class BallMovement : MonoBehaviour{
     void Update()
     {
         scoreBoard.text = p1Score + "|" + p2Score;
+
+        Vector3 v = GetComponent<Rigidbody>().velocity;
+        v.y = 0;
+        ball.GetComponent<Rigidbody>().velocity = v;
     }
 }
