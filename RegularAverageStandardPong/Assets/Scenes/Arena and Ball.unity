@@ -1213,6 +1213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialImpulse: {x: 7, y: 0, z: 7}
+  scoreBoard: {fileID: 186132642}
+  p1Score: 0
+  p2Score: 0
   ball: {fileID: 1487612215}
 --- !u!54 &1487612217
 Rigidbody:
