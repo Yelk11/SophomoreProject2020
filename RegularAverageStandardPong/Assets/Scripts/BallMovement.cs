@@ -10,7 +10,7 @@ public class BallMovement : MonoBehaviour{
     public Text scoreBoard;
     public int p1Score = 0;
     public int p2Score = 0;
-    public float speedlimit = .00000000005f;
+    //public float speedlimit = .00000000005f;
 
 
     private static int MAX_SCORE = 10;
@@ -46,7 +46,7 @@ public class BallMovement : MonoBehaviour{
         v.y = 0;
         ball.GetComponent<Rigidbody>().velocity = v;
 
-        if (GetComponent<Rigidbody>().velocity.magnitude > speedlimit)
+        /*if (GetComponent<Rigidbody>().velocity.magnitude > speedlimit)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * speedlimit;
 
@@ -54,7 +54,7 @@ public class BallMovement : MonoBehaviour{
             {
                 GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * speedlimit;
             }
-
+        */
 
             // check for win
             if (p1Score >= MAX_SCORE)
@@ -66,6 +66,6 @@ public class BallMovement : MonoBehaviour{
                 SceneManager.LoadScene("LossScene");
 
             }
-        }
+        
     }
 }
