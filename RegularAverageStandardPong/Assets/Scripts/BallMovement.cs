@@ -12,7 +12,10 @@ public class BallMovement : MonoBehaviour{
     public Text scoreBoard;
     public int p1Score = 0;
     public int p2Score = 0;
+    public float speedlimit = .00000000005f;
+
     private static int MAX_SCORE = 10;
+
     public GameObject ball;
 
     // Start is called before the first frame update
@@ -37,13 +40,18 @@ public class BallMovement : MonoBehaviour{
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         scoreBoard.text = p1Score + "|" + p2Score;
 
         Vector3 v = GetComponent<Rigidbody>().velocity;
         v.y = 0;
         ball.GetComponent<Rigidbody>().velocity = v;
+
+
+        if (GetComponent<Rigidbody>().velocity.magnitude > speedlimit)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * speedlimit;
 
 
 
@@ -54,6 +62,7 @@ public class BallMovement : MonoBehaviour{
         }
         if(p2Score >= MAX_SCORE){
             SceneManager.LoadScene("LossScene");
+
         }
     }
 
