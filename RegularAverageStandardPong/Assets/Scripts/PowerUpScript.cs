@@ -9,6 +9,7 @@ public class PowerUpScript : MonoBehaviour
 {
     public GameObject powerUp;
     public GameObject ball;
+    public GameObject bonusBall;
     public GameObject rPaddle;
     public GameObject lPaddle;
     public GameObject lastHit;
@@ -25,7 +26,7 @@ public class PowerUpScript : MonoBehaviour
             lastHit = lPaddle;
         }
 
-        if (col.gameObject.name == "Ball")
+        if (col.gameObject.name == "Ball" || col.gameObject.name == "BonusBall")
         {
             float x;
             float y;
@@ -36,7 +37,7 @@ public class PowerUpScript : MonoBehaviour
             powerUp.GetComponent<Renderer>().enabled = false;
             powerUp.GetComponent<Collider>().enabled = false;
 
-            choose = Random.Range(1, 3);
+            choose = Random.Range(1, 4);
 
             //Increases last-hit paddle size.
             if (choose == 1)
@@ -55,6 +56,19 @@ public class PowerUpScript : MonoBehaviour
                 //Waits for 20 seconds after the power up has been hit to return ball to original size.
                 yield return new WaitForSeconds(20f);
                 ball.transform.localScale += new Vector3(-1, -1, -1);
+            //Adds another ball to the field temporarily.
+            } else if (choose == 3)
+            {
+                bonusBall.SetActive(true);
+                bonusBall.GetComponent<Renderer>().enabled = true;
+                bonusBall.GetComponent<Collider>().enabled = true;
+
+                yield return new WaitForSeconds(20f);
+                bonusBall.SetActive(false);
+                bonusBall.GetComponent<Renderer>().enabled = false;
+                bonusBall.GetComponent<Collider>().enabled = false;
+
+                bonusBall.transform.position = new Vector3(0, 1, 0);
             }
 
             x = Random.Range(-13, 13);
