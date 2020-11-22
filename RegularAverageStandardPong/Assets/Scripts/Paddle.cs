@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-
+    public GameObject ball;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 position = this.transform.position;
+
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Vector3 position = this.transform.position;
+            
 
             if (position.z > -7.5f)
             {
@@ -24,9 +26,9 @@ public class Paddle : MonoBehaviour
                 this.transform.position = position;
             }
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
-            Vector3 position = this.transform.position;
+            
 
             if (position.z < 7f)
             {
@@ -34,6 +36,13 @@ public class Paddle : MonoBehaviour
                 this.transform.position = position;
             }
         }
+        else
+        {
+            position.z = ball.transform.position.z;
+            this.transform.position = position;
+        }
+
+
     }
 
     private void OnCollisionEnter(Collision collision)

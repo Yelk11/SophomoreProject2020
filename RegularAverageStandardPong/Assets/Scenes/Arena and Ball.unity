@@ -1229,7 +1229,6 @@ MonoBehaviour:
   scoreBoard: {fileID: 186132642}
   p1Score: 0
   p2Score: 0
-  speedlimit: 200
   ball: {fileID: 1487612215}
 --- !u!54 &1487612217
 Rigidbody:
@@ -1596,6 +1595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd00427e496d044ba211fbb53490029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 1487612215}
 --- !u!65 &1963733280
 BoxCollider:
   m_ObjectHideFlags: 0
