@@ -28,11 +28,13 @@ public class BallMovement : MonoBehaviour{
         {
             
             p1Score++;
+
         }else if(collision.gameObject.name == "Wall 3")
         {
             
             p2Score++;
         }
+
     }
 
 
@@ -66,6 +68,6 @@ public class BallMovement : MonoBehaviour{
                 SceneManager.LoadScene("LossScene");
 
             }
-        
+
     }
 }
