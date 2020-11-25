@@ -842,7 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUp: {fileID: 955848844}
   ball: {fileID: 1487612215}
-  bonusBall: {fileID: 1998624076}
+  bonusBall: {fileID: 0}
   rPaddle: {fileID: 1977846760}
   lPaddle: {fileID: 1963733276}
   lastHit: {fileID: 1963733276}
@@ -1306,8 +1306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialImpulse: {x: 7, y: 0, z: 7}
   ball: {fileID: 1487612215}
-  p1Score: {fileID: 466043179}
-  p2Score: {fileID: 439250999}
+  p1Score: {fileID: 0}
+  p2Score: {fileID: 0}
 --- !u!54 &1487612217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1897,6 +1897,7 @@ GameObject:
   - component: {fileID: 1983881952}
   - component: {fileID: 1983881951}
   - component: {fileID: 1983881950}
+  - component: {fileID: 1983881954}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1978,6 +1979,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983881954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983881949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442fec9919ddafb48bcc60e6b82ad6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree1: {fileID: 3017456480552149019, guid: 7048dd675e987f34db67e3400ea75ae0, type: 3}
+  tree2: {fileID: 8175311206535038241, guid: 574162037754fb04fb71f768584a13ee, type: 3}
+  tree3: {fileID: 7167047158064144980, guid: 086ccabf04ba9d247a280b5cc44ae0a4, type: 3}
+  tree4: {fileID: 4697933040202368687, guid: 5895b20ea41a0f4498d54550368d3e1f, type: 3}
+  tree5: {fileID: 4771148011270026393, guid: 8f84a756d810cd74fb92461acb935914, type: 3}
+  timer: 10
+  initTime: 0
+  randomVectorx: 0
+  randomVectorz: 0
+  item: 0
 --- !u!1 &1998624076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,8 +2036,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialImpulse: {x: 7, y: 0, z: 7}
   ball: {fileID: 1998624076}
-  p1Score: {fileID: 466043179}
-  p2Score: {fileID: 439250999}
+  p1Score: {fileID: 0}
+  p2Score: {fileID: 0}
 --- !u!54 &1998624078
 Rigidbody:
   m_ObjectHideFlags: 0
