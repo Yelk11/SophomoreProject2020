@@ -37,6 +37,16 @@ public class BallMovement : MonoBehaviour{
         v.y = 0;
         ball.GetComponent<Rigidbody>().velocity = v;
 
+        if (v.x > 15)
+        {
+            ball.GetComponent<Rigidbody>().velocity = new Vector3(15, 0, v.z);
+        }
+
+        if (v.z > 15)
+        {
+            ball.GetComponent<Rigidbody>().velocity = new Vector3(v.x, 0, 15);
+        }
+
         /*if (GetComponent<Rigidbody>().velocity.magnitude > speedlimit)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * speedlimit;
