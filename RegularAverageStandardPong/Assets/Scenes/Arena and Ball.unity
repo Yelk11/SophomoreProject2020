@@ -1305,10 +1305,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialImpulse: {x: 7, y: 0, z: 7}
+  
   ball: {fileID: 1487612215}
   p1Score: {fileID: 0}
   p2Score: {fileID: 0}
---- !u!54 &1487612217
+
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1673,6 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd00427e496d044ba211fbb53490029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 1487612215}
 --- !u!65 &1963733280
 BoxCollider:
   m_ObjectHideFlags: 0
