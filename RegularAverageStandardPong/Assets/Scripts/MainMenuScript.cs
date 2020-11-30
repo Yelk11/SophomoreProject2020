@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
-{   
-    //TODO: Add all of the appropriate variables and calls that make the second Paddle automated.
+{
+    public static bool gameType = false;
+
     public void StartGameSinglePlayer()
     {
+        gameType = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
-    //TODO: Add all of the appropriate variables and calls that make the second Paddle useable with controls.
-    //      (I'm thinking WASD for main paddle, Arrow keys for second paddle when it's active)
     public void StartGameTwoPlayer()
     {
+        gameType = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
