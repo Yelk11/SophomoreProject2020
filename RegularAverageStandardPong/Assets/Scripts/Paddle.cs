@@ -17,30 +17,22 @@ public class Paddle : MonoBehaviour
     {
         Vector3 position = this.transform.position;
 
-
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            
-
             if (position.z > -7.5f)
             {
                 position.z -= 0.18f;
                 this.transform.position = position;
             }
-        }else if (Input.GetKey(KeyCode.UpArrow))
+        }else if (Input.GetKey(KeyCode.W))
         {
-            
-
             if (position.z < 7f)
             {
                 position.z += 0.18f;
                 this.transform.position = position;
-                
-
-
             }
         }
-        else if(true) // Enables CPU
+        else if(MainMenuScript.gameType) // Enables CPU (Supposed to be unreachable)
         {
             position.z = ball.transform.position.z;
             this.transform.position = position;

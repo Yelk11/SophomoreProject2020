@@ -13,7 +13,7 @@ public class PaddleRight : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             Vector3 position = this.transform.position;
 
@@ -23,7 +23,7 @@ public class PaddleRight : MonoBehaviour
                 this.transform.position = position;
             }
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Vector3 position = this.transform.position;
 
