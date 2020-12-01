@@ -5,6 +5,7 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     public GameObject ball;
+    public GameObject paddle;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,7 @@ public class Paddle : MonoBehaviour
                 this.transform.position = position;
             }
         }
-        else if(MainMenuScript.gameType) // Enables CPU (Supposed to be unreachable)
+        else if(MainMenuScript.gameType) // Enables CPU
         {
             position.z = ball.transform.position.z;
             this.transform.position = position;

@@ -2422,6 +2422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1487612215}
+  paddle: {fileID: 1963733276}
 --- !u!65 &1963733280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2508,7 +2509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2948360774aca494d8f52194b47cd547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 1487612215}
 --- !u!1 &1977846760
 GameObject:
   m_ObjectHideFlags: 0
