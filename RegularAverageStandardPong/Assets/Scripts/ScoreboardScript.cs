@@ -23,6 +23,16 @@ public class ScoreboardScript : MonoBehaviour
 
         scoreBoard.GetComponent<UnityEngine.UI.Text>().text = p1 + "|" + p2;
 
+        //Since CPU is left paddle in 1 player version, this fixes where you would be sent to the win screen if the CPU won.
+        if (p1 > MAX_SCORE && MainMenuScript.gameType)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
+        if (p2 > MAX_SCORE && MainMenuScript.gameType)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+
         // check for win
         if (p1 >= MAX_SCORE)
         {
